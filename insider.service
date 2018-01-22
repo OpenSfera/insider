@@ -1,0 +1,13 @@
+[Unit]
+Description=Insider - OpenSfera Service
+After=mongodb.service
+
+[Service]
+Type=idle
+User=root
+WorkingDirectory=/usr/local/sfera/insider
+ExecStart=/usr/bin/python3 /usr/local/sfera/insider/insider.py
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
